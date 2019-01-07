@@ -1,0 +1,113 @@
+<br>
+<br>
+
+<h1>Marsupilami</h1>
+<br>
+<hr>
+<br>
+<div class="col-xs-6 col-md-10">
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" for="prospect_nom">
+  <abbr title="requis">*</abbr> Nom </label>
+<input class="form-control string required prospect-nom" class="form-control" id="Nom" name="Nom" type="text" [(ngModel)]="newmars.Nom" required minlength="3" #nom="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder="Nom *" size="255" type="text" name="prospect[Nom]" id="prospect_nom">
+</div>
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" for="prospect_famille">
+  <abbr title="requis">*</abbr>famille</label>
+<input class="form-control string required prospect-famille" class="form-control" id="famille" name="famille" type="text" [(ngModel)]="newmars.famille" required minlength="3" #famille="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder="famille*" size="255" type="text" name="prospect[famille]" id="prospect_famille">
+</div>
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" for="prospect_age">
+  <abbr title="requis">*</abbr>age </label>
+<input class="form-control string required prospect-last-name" class="form-control" id="age" name="age" type="text" [(ngModel)]="newmars.age" required minlength="3" #nom="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder="age*" size="255" type="text" name="prospect[age]" id="prospect_age">
+</div>
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" for="prospect_race">
+  <abbr title="requis">*</abbr> race </label>
+<input class="form-control string required prospect-last-name" class="form-control" id="race" name="race" type="text" [(ngModel)]="newmars.race" required minlength="3" #nom="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder="race" size="255" type="text" name="prospect[race]" id="prospect_race">
+</div>
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" for="prospect_nourriture">
+  <abbr title="requis">*</abbr> nourriture </label>
+<input class="form-control string required prospect-last-name" class="form-control" id="nourriture" name="nourriture" type="text" [(ngModel)]="newmars.nourriture" required minlength="3" #nom="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder="nourriture*" size="255" type="text" name="prospect[nourriture]" id="prospect_nourriture">
+</div>
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" for="prospect_username">
+  <abbr title="requis">*</abbr> username </label>
+<input class="form-control string required prospect-last-name" class="form-control" id="username" name="username" type="text" [(ngModel)]="newmars.username" required minlength="3" #nom="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder="username*" size="255" type="text" name="prospect[usernamee]" id="prospect_username">
+</div>
+<div class="form-group string required prospect_last_name">
+<label class="sr-only string required control-label" >
+  <abbr title="requis">*</abbr>  pass </label>
+<input class="form-control string required prospect-last-name" class="form-control" id=" pass" name=" pass" type="text" [(ngModel)]="newmars. pass" required minlength="3" #nom="ngModel"   title="Ce champ est obligatoire." required="required" aria-required="true" maxlength="255" placeholder=" password*" size="255" type="text" name="prospect[ pass]" id="prospect_ pass">
+</div>
+</div>
+
+
+<button  class="btn btn-success" name="submit" type="submit" (click)="onSubmit()"> Ajouter </button>
+<button  class="btn btn-danger" name="submit" type="submit" (click)="onReset()"> Supprimer </button>
+
+
+<div id="myTabContent" class="tab-content">
+  <div class="tab-pane fade active show">
+    <br>
+    <b>Marsupilamis List </b>
+
+
+    <table style="width:100%" border="2"  class="zui-table zui-table-zebra zui-table-horizontal"  >
+      <thead *ngIf="showHead">
+      <tr>
+        <th>
+         nom
+        </th>
+        <th>
+         famille
+        </th>
+        <th>
+        age
+        </th>
+        <th>
+         race
+        </th>
+        <th>
+          nourriture
+        </th>
+        <th>
+        </th>
+      </tr>
+      </thead>
+
+      <tbody>
+      <tr *ngFor="let mar of mars ">
+        <td>
+          {{mar.Nom}}
+        </td>
+        <td  >
+          {{ mar.famille}}
+        </td>
+        <td  >
+          {{mar.age }}
+        </td>
+        <td  >
+          {{ mar.race}}
+        </td>
+        <td  >
+          {{ mar.nourriture}}
+        </td>
+
+        <td>
+
+          <button class="btn btn-danger" name="submit" type="submit" (click)="delete(mar)">supprimer
+          </button> </td>
+        <td>
+         <button  class="btn btn-info" [routerLink]="['/modif', mar._id ]" >Modifier</button>
+        </td>
+      </tr>
+      </tbody>
+
+
+
+    </table>
+  </div>
+</div>
+<br><br>
